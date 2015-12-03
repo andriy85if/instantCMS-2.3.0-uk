@@ -65,7 +65,7 @@ INSERT INTO `{#}activity_types` (`id`, `is_enabled`, `controller`, `name`, `titl
 (11, 1, 'groups', 'leave', 'Вихід із групи', 'виходить з групи %s'),
 (12, 1, 'users', 'status', 'Зміна статусу', '&rarr; %s'),
 (13, 1, 'content', 'add.articles', 'Додавання статей', 'додає статтю %s'),
-(14, 1, 'content', 'add.posts', 'Додавання постів', 'додає пост %s'),
+(14, 1, 'content', 'add.posts', 'Додавання дописів', 'додає допис %s'),
 (15, 0, 'content', 'add.albums', 'Додавання альбомів', 'додає фотоальбом %s'),
 (16, 1, 'content', 'add.board', 'Додавання оголошень', 'додає оголошення %s'),
 (17, 1, 'content', 'add.news', 'Додавання новин', 'додає новину %s'),
@@ -228,7 +228,7 @@ CREATE TABLE `{#}content_types` (
 INSERT INTO `{#}content_types` (`id`, `title`, `name`, `description`, `is_date_range`, `is_premod_add`, `is_premod_edit`, `is_cats`, `is_cats_recursive`, `is_folders`, `is_in_groups`, `is_in_groups_only`, `is_comments`, `is_comments_tree`, `is_rating`, `is_rating_pos`, `is_tags`, `is_auto_keys`, `is_auto_desc`, `is_auto_url`, `is_fixed_url`, `url_pattern`, `options`, `labels`, `seo_keys`, `seo_desc`, `seo_title`, `item_append_html`, `is_fixed`) VALUES
 (1, 'Сторінки', 'pages', 'Статичні сторінки сайту', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, '{id}-{title}', '---\nis_cats_change: null\nis_cats_open_root: null\nis_cats_only_last: null\nis_tags_in_list: null\nis_tags_in_item: null\nis_rss: null\nlist_on: null\nprofile_on: null\nlist_show_filter: null\nlist_expand_filter: null\nitem_on: 1\n', '---\none: сторінка\ntwo: сторінки\nmany: сторінок\ncreate: сторінку\n', NULL, NULL, NULL, NULL, 1),
 (5, 'Статті', 'articles', 'Текстові матеріали', NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 1, 1, 1, NULL, '{id}-{title}', '---\nis_cats_change: 1\nis_cats_open_root: 1\nis_cats_only_last: null\nis_show_cats: 1\nis_tags_in_list: 1\nis_tags_in_item: 1\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: 1\nlist_expand_filter: null\nlist_style:\nitem_on: 1\nis_cats_keys: 1\nis_cats_desc: 1\nis_cats_auto_url: null\n', '---\none: стаття\ntwo: статті\nmany: статей\ncreate: статтю\n', 'статті, різні, цікаві, корисні', NULL, NULL, NULL, NULL),
-(6, 'Пости', 'posts', 'Персональні публікації користувачів', NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 1, NULL, 1, NULL, 1, 1, 1, 1, 1, '{id}-{title}', '---\nis_cats_change: null\nis_cats_open_root: null\nis_cats_only_last: null\nis_show_cats: null\nis_tags_in_list: 1\nis_tags_in_item: 1\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: null\nlist_expand_filter: null\nlist_style:\nitem_on: 1\nis_cats_keys: null\nis_cats_desc: null\nis_cats_auto_url: 1\n', '---\none: пост\ntwo: пости\nmany: постів\ncreate: пост\nlist: Стрічка блогів\nprofile: Блог\n', NULL, NULL, NULL, NULL, NULL),
+(6, 'Дописи', 'posts', 'Персональні публікації користувачів', NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 1, NULL, 1, NULL, 1, 1, 1, 1, 1, '{id}-{title}', '---\nis_cats_change: null\nis_cats_open_root: null\nis_cats_only_last: null\nis_show_cats: null\nis_tags_in_list: 1\nis_tags_in_item: 1\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: null\nlist_expand_filter: null\nlist_style:\nitem_on: 1\nis_cats_keys: null\nis_cats_desc: null\nis_cats_auto_url: 1\n', '---\none: допис\ntwo: дописи\nmany: дописів\ncreate: допис\nlist: Стрічка блогів\nprofile: Блог\n', NULL, NULL, NULL, NULL, NULL),
 (7, 'Фотоальбоми', 'albums', 'Альбоми з фотографіями користувачів', NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 1, NULL, 1, NULL, 1, 1, 1, 1, 1, '{id}-{title}', '---\nis_cats_change: null\nis_cats_open_root: null\nis_cats_only_last: null\nis_show_cats: null\nis_tags_in_list: null\nis_tags_in_item: 1\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: null\nlist_expand_filter: null\nitem_on: 1\nis_cats_keys: null\nis_cats_desc: null\nis_cats_auto_url: 1\n', '---\none: альбом\ntwo: альбоми\nmany: альбомів\ncreate: фотоальбом\n', NULL, NULL, NULL, NULL, NULL),
 (9, 'Оголошення', 'board', 'Комерційні оголошення', NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, 1, '{id}-{title}', '---\nis_cats_change: null\nis_cats_open_root: null\nis_cats_only_last: 1\nis_show_cats: 1\nis_tags_in_list: null\nis_tags_in_item: null\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: 1\nlist_expand_filter: null\nlist_style: table\nitem_on: 1\nis_cats_keys: null\nis_cats_desc: null\nis_cats_auto_url: 1\n', '---\none: оголошення\ntwo: оголошення\nmany: оголошень\ncreate: оголошення\nlist: Дошка оголошень\nprofile:\n', NULL, NULL, NULL, NULL, NULL),
 (10, 'Новини', 'news', 'Інформаційні повідомлення', NULL, 1, NULL, 1, 1, NULL, NULL, NULL, 1, NULL, 1, NULL, 1, 1, 1, 1, 1, '{id}-{title}', '---\nis_cats_change: 1\nis_cats_open_root: null\nis_cats_only_last: null\nis_show_cats: null\nis_tags_in_list: null\nis_tags_in_item: 1\nis_rss: 1\nlist_on: 1\nprofile_on: 1\nlist_show_filter: null\nlist_expand_filter: null\nlist_style: featured\nitem_on: 1\nis_cats_keys: null\nis_cats_desc: null\nis_cats_auto_url: 1\n', '---\none: новина\ntwo: новини\nmany: новин\ncreate: новину\nlist:\nprofile:\n', NULL, NULL, NULL, NULL, NULL);
@@ -253,7 +253,7 @@ CREATE TABLE `{#}controllers` (
 INSERT INTO `{#}controllers` (`id`, `title`, `name`, `is_enabled`, `options`, `author`, `url`, `version`, `is_backend`) VALUES
 (1, 'Панель керування', 'admin', 1, '', 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 0),
 (2, 'Контент', 'content', 1, '', 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 0),
-(3, 'Профілі користувачів', 'користувачі', 1, '---\nis_ds_online: 1\nis_ds_rating: 1\nis_ds_popular: 1\nis_filter: 1\nis_auth_only: null\nis_status: 1\nis_wall: 1\nis_themes_on: 1\nmax_tabs: 6\nis_friends_on: 1\nis_karma_comments: 1\nkarma_time: 30\n', 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 1),
+(3, 'Профілі користувачів', 'users', 1, '---\nis_ds_online: 1\nis_ds_rating: 1\nis_ds_popular: 1\nis_filter: 1\nis_auth_only: null\nis_status: 1\nis_wall: 1\nis_themes_on: 1\nmax_tabs: 6\nis_friends_on: 1\nis_karma_comments: 1\nkarma_time: 30\n', 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 1),
 (4, 'Коментарі', 'comments', 1, NULL, 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 1),
 (5, 'Особисті повідомлення', 'messages', 1, '---\nlimit: 10\ngroups_allowed: \n  - 0\n', 'InstantCMS Team', 'http://www.instantcms.ru/', '2.0', 1),
 (6, 'Авторизація і реєстрація', 'auth', 1, '---\nis_reg_enabled: 1\nreg_reason: >\n  На жаль, нам поки що\n  не потрібні нові\n  користувачі\nis_reg_invites: null\nreg_captcha: 1\nverify_email: null\nverify_exp: 48\nauth_captcha: 1\nrestricted_emails: |\n  *@shitmail.me\r\n  *@mailspeed.ru\r\n  *@temp-mail.ru\r\n  *@guerrillamail.com\r\n  *@12minutemail.com\r\n  *@mytempemail.com\r\n  *@spamobox.com\r\n  *@disposableinbox.com\r\n  *@filzmail.com\r\n  *@freemail.ms\r\n  *@anonymbox.com\r\n  *@lroid.com\r\n  *@yopmail.com\r\n  *@TempEmail.net\r\n  *@spambog.com\r\n  *@mailforspam.com\r\n  *@spam.su\r\n  *@no-spam.ws\r\n  *@mailinator.com\r\n  *@spamavert.com\r\n  *@trashcanmail.com\nrestricted_names: |\n  admin*\r\n  адмін*\r\n  модератор\r\n  moderator\nrestricted_ips:\nis_invites: 1\nis_invites_strict: 1\ninvites_period: 7\ninvites_qty: 3\ninvites_min_karma: 0\ninvites_min_rating: 0\ninvites_min_days: 0\n', 'InstantCMS Team', 'http://www.instantcms.ru', '2.0', 1),
@@ -404,7 +404,7 @@ INSERT INTO `{#}con_albums_fields` (`id`, `ctype_id`, `name`, `title`, `hint`, `
 (3, 7, 'user', 'Автор', NULL, 3, NULL, 'user', 1, 1, 0, NULL, 1, 1, 1, NULL, '---\nlabel_in_list: none\nlabel_in_item: left\n', NULL, NULL),
 (4, 7, 'content', 'Опис альбому', NULL, 4, NULL, 'text', 1, 1, NULL, NULL, 1, NULL, NULL, NULL, '---\nmin_length: 0\nmax_length: 2048\nlabel_in_list: none\nlabel_in_item: none\nis_required: null\nis_digits: null\nis_alphanumeric: null\nis_email: null\nis_unique: null\n', '---\n- 0\n', '---\n- 0\n'),
 (5, 7, 'cover_image', 'Обкладинка альбому', NULL, 5, NULL, 'image', 1, NULL, NULL, NULL, 1, 1, 1, NULL, '---\nlabel_in_list: left\nlabel_in_item: left\nis_required: null\nis_digits: null\nis_alphanumeric: null\nis_email: null\nis_unique: null\n', '---\n- 0\n', '---\n- 0\n'),
-(6, 7, 'is_public', 'Загальний фотоальбом', 'Інша користувачі також зможуть додавати фото в цей альбом', 6, NULL, 'checkbox', 0, 0, NULL, NULL, 1, NULL, NULL, NULL, '---\nlabel_in_list: none\nlabel_in_item: none\n', NULL, NULL);
+(6, 7, 'is_public', 'Загальний фотоальбом', 'Інші користувачі також зможуть додавати фото в цей альбом', 6, NULL, 'checkbox', 0, 0, NULL, NULL, 1, NULL, NULL, NULL, '---\nlabel_in_list: none\nlabel_in_item: none\n', NULL, NULL);
 
 DROP TABLE IF EXISTS `{#}con_albums_props`;
 CREATE TABLE `{#}con_albums_props` (
@@ -1430,7 +1430,7 @@ INSERT INTO `{#}con_posts_fields` (`id`, `ctype_id`, `name`, `title`, `hint`, `o
 (1, 6, 'title', 'Заголовок', NULL, 1, NULL, 'caption', 1, 1, 1, NULL, 1, 1, 0, NULL, '---\nlabel_in_list: none\nlabel_in_item: none\nmin_length: 3\nmax_length: 100\nis_required: true\n', NULL, NULL),
 (2, 6, 'date_pub', 'Дата публікації', NULL, 2, NULL, 'date', 1, 1, 1, NULL, 1, 1, 1, NULL, '---\nlabel_in_list: none\nlabel_in_item: left\nshow_time: true\n', NULL, NULL),
 (3, 6, 'user', 'Автор', NULL, 3, NULL, 'user', 1, 1, 0, NULL, 1, 1, 1, NULL, '---\nlabel_in_list: none\nlabel_in_item: left\n', NULL, NULL),
-(4, 6, 'content', 'Текст посту', NULL, 5, NULL, 'html', 1, 1, NULL, NULL, 1, NULL, NULL, NULL, '---\neditor: redactor\nis_html_filter: null\nteaser_len: 500\nlabel_in_list: none\nlabel_in_item: none\nis_required: 1\nis_digits: null\nis_alphanumeric: null\nis_email: null\nis_unique: null\nprofile_value:\n', '---\n- 0\n', '---\n- 0\n'),
+(4, 6, 'content', 'Текст допису', NULL, 5, NULL, 'html', 1, 1, NULL, NULL, 1, NULL, NULL, NULL, '---\neditor: redactor\nis_html_filter: null\nteaser_len: 500\nlabel_in_list: none\nlabel_in_item: none\nis_required: 1\nis_digits: null\nis_alphanumeric: null\nis_email: null\nis_unique: null\nprofile_value:\n', '---\n- 0\n', '---\n- 0\n'),
 (5, 6, 'picture', 'Картинка для привертання уваги', NULL, 4, NULL, 'image', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, '---\nsize_teaser: normal\nsize_full: normal\nsizes:\n  - small\n  - normal\nlabel_in_list: none\nlabel_in_item: none\nis_required: null\nis_digits: null\nis_alphanumeric: null\nis_email: null\nis_unique: null\n', '---\n- 0\n', '---\n- 0\n');
 
 DROP TABLE IF EXISTS `{#}con_posts_props`;
@@ -13970,7 +13970,7 @@ CREATE TABLE `{#}rss_feeds` (
 
 INSERT INTO `{#}rss_feeds` (`id`, `ctype_id`, `ctype_name`, `title`, `description`, `image`, `mapping`, `limit`, `is_enabled`, `is_cache`, `cache_interval`, `date_cached`) VALUES
 (2, 5, 'articles', 'Статті', NULL, NULL, '---\ntitle: title\ndescription: teaser\npubDate: date_pub\nimage:\nimage_size: normal\n', 15, 1, NULL, 60, NULL),
-(3, 6, 'posts', 'Пости', 'Стрічка постів користувачів', NULL, '---\ntitle: title\ndescription: content\npubDate: date_pub\nimage: picture\nimage_size: normal\n', 15, 1, NULL, 60, NULL),
+(3, 6, 'posts', 'Дописи', 'Стрічка дописів користувачів', NULL, '---\ntitle: title\ndescription: content\npubDate: date_pub\nimage: picture\nimage_size: normal\n', 15, 1, NULL, 60, NULL),
 (4, 7, 'albums', 'Фотоальбоми', NULL, NULL, '---\ntitle: title\ndescription: content\npubDate: date_pub\nimage: cover_image\nimage_size: normal\n', 15, 1, NULL, 60, NULL),
 (5, 9, 'board', 'Оголошення', 'Комерційні оголошення', NULL, '---\ntitle: title\ndescription: content\npubDate: date_pub\nimage: photo\nimage_size: normal\n', 15, 1, NULL, 60, NULL),
 (6, 10, 'news', 'Новини', 'Інформаційні повідомлення', NULL, '---\ntitle: title\ndescription: content\npubDate: date_pub\nimage: photo\nimage_size: normal\n', 15, 1, NULL, 60, NULL);
@@ -14502,10 +14502,10 @@ INSERT INTO `{#}widgets_pages` (`id`, `controller`, `name`, `title_const`, `titl
 (148, 'content', 'articles.list', 'LANG_WP_CONTENT_LIST', 'Статті', NULL, 'articles\narticles-*\narticles/*', 'articles/*.html\narticles/add\narticles/edit/*'),
 (149, 'content', 'articles.item', 'LANG_WP_CONTENT_ITEM', 'Статті', NULL, 'articles/*.html', NULL),
 (150, 'content', 'articles.edit', 'LANG_WP_CONTENT_ITEM_EDIT', 'Статті', NULL, 'articles/add\narticles/edit/*', NULL),
-(151, 'content', 'posts.all', 'LANG_WP_CONTENT_ALL_PAGES', 'Пости', NULL, 'posts\nposts-*\nposts/*', NULL),
-(152, 'content', 'posts.list', 'LANG_WP_CONTENT_LIST', 'Пости', NULL, 'posts\nposts-*\nposts/*', 'posts/*.html\nposts/add\nposts/edit/*'),
-(153, 'content', 'posts.item', 'LANG_WP_CONTENT_ITEM', 'Пости', NULL, 'posts/*.html', NULL),
-(154, 'content', 'posts.edit', 'LANG_WP_CONTENT_ITEM_EDIT', 'Пости', NULL, 'posts/add\nposts/edit/*', NULL),
+(151, 'content', 'posts.all', 'LANG_WP_CONTENT_ALL_PAGES', 'Дописи', NULL, 'posts\nposts-*\nposts/*', NULL),
+(152, 'content', 'posts.list', 'LANG_WP_CONTENT_LIST', 'Дописи', NULL, 'posts\nposts-*\nposts/*', 'posts/*.html\nposts/add\nposts/edit/*'),
+(153, 'content', 'posts.item', 'LANG_WP_CONTENT_ITEM', 'Дописи', NULL, 'posts/*.html', NULL),
+(154, 'content', 'posts.edit', 'LANG_WP_CONTENT_ITEM_EDIT', 'Дописи', NULL, 'posts/add\nposts/edit/*', NULL),
 (155, 'content', 'albums.all', 'LANG_WP_CONTENT_ALL_PAGES', 'Фотоальбоми', NULL, 'albums\nalbums-*\nalbums/*', NULL),
 (156, 'content', 'albums.list', 'LANG_WP_CONTENT_LIST', 'Фотоальбоми', NULL, 'albums\nalbums-*\nalbums/*', 'albums/*.html\nalbums/add\nalbums/edit/*'),
 (157, 'content', 'albums.item', 'LANG_WP_CONTENT_ITEM', 'Фотоальбоми', NULL, 'albums/*.html', NULL),

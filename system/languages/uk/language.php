@@ -133,7 +133,7 @@
     define('LANG_REGISTRATION',              'Реєстрація');
     define('LANG_USER_REGISTRATION',         'Реєстрація користувача');
     define('LANG_CREATE_ACCOUNT',            'Створіть акаунт');
-    define('LANG_LOG_IN',                    'Ввійти');
+    define('LANG_LOG_IN',                    'Увійти');
     define('LANG_LOG_IN_ACCOUNT',            'Увійдіть, використовуючи Ваш акаунт');
     define('LANG_LOG_IN_OPENID',             'Увійдіть через соціальні мережі');
     define('LANG_LOG_OUT',                   'Вийти');
